@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: solder-e2e-config
+  namespace: solder-e2e
+  labels:
+    app.kubernetes.io/name: solder-e2e
+    test.solder.io/case: gh-end-to-end
+data:
+  version: v1
+  source: github
