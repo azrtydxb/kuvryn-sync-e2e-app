@@ -7,5 +7,5 @@ metadata:
     app.kubernetes.io/name: solder-e2e
     test.solder.io/case: gh-end-to-end
 data:
-  version: v1
+  version: v2
   source: github
