@@ -1,0 +1,17 @@
+# Solder e2e fixture: a pre-sync hook that must finish before anything else.
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: solder-e2e-migrate
+  namespace: solder-e2e-staged
+  annotations:
+    solder.io/hook: pre-sync
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrate
+          image: busybox:1.36
+          command: ["sh", "-c", "echo migrating; sleep 5"]
