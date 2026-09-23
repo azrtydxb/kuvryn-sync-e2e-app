@@ -1,0 +1,21 @@
+# Solder e2e fixture: wave 0 workload.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solder-e2e-api
+  namespace: solder-e2e-staged
+  annotations:
+    solder.io/sync-wave: "0"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solder-e2e-api
+  template:
+    metadata:
+      labels:
+        app: solder-e2e-api
+    spec:
+      containers:
+        - name: api
+          image: registry.k8s.io/pause:3.10
