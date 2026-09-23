@@ -1,0 +1,17 @@
+# Solder e2e fixture: a post-sync hook that runs after every wave is Healthy.
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: solder-e2e-smoke
+  namespace: solder-e2e-staged
+  annotations:
+    solder.io/hook: post-sync
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: smoke
+          image: busybox:1.36
+          command: ["sh", "-c", "echo smoke test"]
