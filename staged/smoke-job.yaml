@@ -1,11 +1,11 @@
-# Solder e2e fixture: a post-sync hook that runs after every wave is Healthy.
+# Kuvryn Sync e2e fixture: a post-sync hook that runs after every wave is Healthy.
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: solder-e2e-smoke
-  namespace: solder-e2e-staged
+  name: kuvryn-sync-e2e-smoke
+  namespace: kuvryn-sync-e2e-staged
   annotations:
-    solder.io/hook: post-sync
+    sync.kuvryn.io/hook: post-sync
 spec:
   backoffLimit: 0
   template:

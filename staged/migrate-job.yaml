@@ -1,11 +1,11 @@
-# Solder e2e fixture: a pre-sync hook that must finish before anything else.
+# Kuvryn Sync e2e fixture: a pre-sync hook that must finish before anything else.
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: solder-e2e-migrate
-  namespace: solder-e2e-staged
+  name: kuvryn-sync-e2e-migrate
+  namespace: kuvryn-sync-e2e-staged
   annotations:
-    solder.io/hook: pre-sync
+    sync.kuvryn.io/hook: pre-sync
 spec:
   backoffLimit: 0
   template:

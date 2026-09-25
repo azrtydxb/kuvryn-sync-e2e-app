@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: solder-e2e-config
-  namespace: solder-e2e
+  name: kuvryn-sync-e2e-config
+  namespace: kuvryn-sync-e2e
   labels:
-    app.kubernetes.io/name: solder-e2e
-    test.solder.io/case: gh-end-to-end
+    app.kubernetes.io/name: kuvryn-sync-e2e
+    test.sync.kuvryn.io/case: gh-end-to-end
 data:
   version: v2
   source: github

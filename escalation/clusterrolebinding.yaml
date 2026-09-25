@@ -1,17 +1,17 @@
-# Solder e2e fixture: an Application whose service account may only manage the
-# solder-e2e namespace renders this binding. Solder must refuse to apply it,
+# Kuvryn Sync e2e fixture: an Application whose service account may only manage the
+# kuvryn-sync-e2e namespace renders this binding. Kuvryn Sync must refuse to apply it,
 # because it would grant that service account cluster-admin.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: solder-e2e-escalation
+  name: kuvryn-sync-e2e-escalation
   labels:
-    test.solder.io/case: tenant-escalation
+    test.sync.kuvryn.io/case: tenant-escalation
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: cluster-admin
 subjects:
   - kind: ServiceAccount
-    name: solder-e2e-deployer
+    name: kuvryn-sync-e2e-deployer
     namespace: default

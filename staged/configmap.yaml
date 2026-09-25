@@ -1,10 +1,10 @@
-# Solder e2e fixture: wave 1, applied only after wave 0 is Healthy.
+# Kuvryn Sync e2e fixture: wave 1, applied only after wave 0 is Healthy.
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: solder-e2e-after-api
-  namespace: solder-e2e-staged
+  name: kuvryn-sync-e2e-after-api
+  namespace: kuvryn-sync-e2e-staged
   annotations:
-    solder.io/sync-wave: "1"
+    sync.kuvryn.io/sync-wave: "1"
 data:
   wave: "1"
